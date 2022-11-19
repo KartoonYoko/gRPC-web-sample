@@ -1,0 +1,18 @@
+
+
+<div>
+    <button (click)="onStartClick()">Start stream</button>
+    <button (click)="onEndClick()">End stream</button>
+
+    <div>
+        <p *ngFor="let item of streamMessages;">
+            {{ item }}
+        </p>
+    </div>
+
+    <button (click)="getById()">Get by id</button>
+
+    <div>
+        <p>{{ byIdMessage }}</p>
+    </div>
+</div>

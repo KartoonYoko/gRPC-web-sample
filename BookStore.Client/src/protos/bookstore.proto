@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option csharp_namespace = "BookStore.Web.Protos";
+package BookService.v1;
+
+import "google/protobuf/empty.proto";
+
+service BookStoreService{
+	rpc GetBooks(google.protobuf.Empty) returns (stream BookResponse) {}
+	rpc GetBook(BookRequest) returns (BookResponse) {}
+}
+
+message BookResponse{
+	int64 Id = 1;
+	string Title = 2;
+}
+
+message BookRequest{
+		int64 Id = 1;
+}
